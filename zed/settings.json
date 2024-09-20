@@ -1,0 +1,34 @@
+{
+  // The default font size for text in the editor
+  "buffer_font_size": 18,
+
+  // Scrollbar related settings
+  "scrollbar": {
+    // When to show the scrollbar in the editor.
+    // This setting can take four values:
+    //
+    // 1. Show the scrollbar if there's important information or
+    //    follow the system's configured behavior (default):
+    //   "auto"
+    // 2. Match the system's configured behavior:
+    //    "system"
+    // 3. Always show the scrollbar:
+    //    "always"
+    // 4. Never show the scrollbar:
+    //    "never"
+    "show": "never"
+  },
+
+  // Settings related to the editor's tabs
+  "tabs": {
+    // Whether to show the file icon for a tab.
+    "file_icons": true
+  },
+
+  // Vim settings
+  "vim": {
+    "toggle_relative_line_numbers": true,
+    "use_multiline_find": true,
+    "use_smartcase_find": true
+  }
+}

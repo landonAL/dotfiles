@@ -1,0 +1,26 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("c:/Users/Landon/" . "Downloads/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "c:/Users/Landon/Downloads/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "desktop.ini"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("c:/Users/Landon/Downloads/" (26293 12864 0 0) "yimmenu/" "PXLauncher1.5.0/" "LXLauncher.exe" "Intel Pack By Panj/" "Impulse Mod Menu.rar" "Impulse Mod Menu/" "IMG_0534.JPEG" "desktop.ini" "CEPSigMaker_x86_[unknowncheats.me]_.dll" "CEPSigMaker_x64_[unknowncheats.me]_.dll" "../" "./")
+
+ ("c:/Users/Landon/" (26290 9593 0 0) "Videos/" "Templates/" "Start Menu/" "source/" "SendTo/" "Searches/" "Saved Games/" "Recent/" "PrintHood/" "Pictures/" "OneDrive/" "ntuser.ini" "NTUSER.DAT{758592ae-4219-11ef-b49e-ea1398510203}.TMContainer00000000000000000002.regtrans-ms" "NTUSER.DAT{758592ae-4219-11ef-b49e-ea1398510203}.TMContainer00000000000000000001.regtrans-ms" "NTUSER.DAT{758592ae-4219-11ef-b49e-ea1398510203}.TM.blf" "ntuser.dat.LOG2" "ntuser.dat.LOG1" "NTUSER.DAT" "NetHood/" "My Documents/" "Music/" "Local Settings/" "Links/" "IntelGraphicsProfiles/" "Favorites/" "Downloads/" "Documents/" "Desktop/" "Cookies/" "Contacts/" "Application Data/" "AppData/" ".vscode/" ".gitconfig" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

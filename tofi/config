@@ -1,0 +1,15 @@
+width = 50%
+height = 50%
+border-width = 2
+outline-width = 1
+padding-left = 1%
+padding-top = 1%
+font = /usr/local/share/fonts/Iosevka-Regular.ttf
+font-size = 16
+background-color = #000000E6
+prompt-text = ""
+placeholder-text = "Search..."
+border-color = #00ffffee
+selection-color = #00ffffee
+corner-radius = 9
+scale = true
