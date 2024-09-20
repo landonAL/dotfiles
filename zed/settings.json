@@ -1,19 +1,29 @@
 {
   // The default font size for text in the editor
+  "buffer_font_family": "Zed Plex Mono",
+
+  // The default font size for text in the editor
+  "buffer_font_size": 17,
+
+  // Features that can be globally enabled or disabled
   "features": {
+    // Which inline completion provider to use.
     "inline_completion_provider": "none"
   },
 
   "assistant": {
+    // Version of this setting.
+    "version": "2",
+
+    // The default model to use when creating new contexts.
     "default_model": {
+      // The provider to use.
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-20240620"
-    },
 
-    "version": "2"
+      // The model to use.
+      "model": "claude-3-5-sonnet"
+    }
   },
-
-  "buffer_font_size": 18,
 
   // Scrollbar related settings
   "scrollbar": {
