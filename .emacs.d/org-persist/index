@@ -1,9 +1,0 @@
-((:container
-  ((elisp org-element--headline-cache)
-   (elisp org-element--cache))
-  :persist-file "37/6fb1b2-0729-4353-8b12-d37b39a98173" :associated
-  (:hash "64471ea3c50a8dc5f4257c4f4ed924da" :file "/home/admin/.emacs.d/init.org" :inode 140901)
-  :expiry 30 :last-access 1726770153.3723779 :last-access-hr "2024-09-19T13:22:33-0500")
- (:container
-  ((index "3.1"))
-  :persist-file "38/93d173-cfe8-49ce-938e-aad93509d1fc" :associated nil :expiry never :last-access 1726770165.5217457 :last-access-hr "2024-09-19T13:22:45-0500"))

@@ -1,0 +1,9 @@
+.emacs|symlink|
+.emacs.rc|symlink|
+.emacs.local|symlink|
+.gitconfig|symlink|
+#.rexim|symlink|
+#.npmrc|symlink|
+#.jmacsrc|symlink|
+#.apvlvrc|symlink|
+#.nexrc|symlink|

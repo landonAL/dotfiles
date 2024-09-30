@@ -1,0 +1,65 @@
+;; -*- lexical-binding: t; -*-
+
+(defvar last-file-name-handler-alist file-name-handler-alist)
+(setq gc-cons-threshold 402653184
+      gc-cons-percentage 0.6
+      file-name-handler-alist nil)
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'gotham)
+
+;; Makes the current line number bold
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(line-number-current-line ((t (:inherit (hl-line default) :weight bold)))))
+
+;; Uncomment the following line if line spacing needs adjusting.
+(setq-default line-spacing 0.12)
+
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
+(global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
+
+(delete-selection-mode 1)                    ;; You can select text and delete it by typing
+(electric-indent-mode -1)                    ;; Turn off the weird indenting that Emacs does by default
+(electric-pair-mode 1)                       ;; Turns on automatic parentheses pairing
+(global-auto-revert-mode t)                  ;; Automatically show changes if the file has changed
+(global-display-line-numbers-mode 1)         ;; Display line numbers
+(global-visual-line-mode t)                  ;; Enable truncated lines
+(menu-bar-mode -1)                           ;; Disable the menu bar 
+(scroll-bar-mode -1)                         ;; Disable the scroll bar
+(tool-bar-mode -1)                           ;; Disable the tool bar
+(setq inhibit-startup-screen t)              ;; Disable startup screen
+(save-place-mode 1)                          ;; Saves place in file after exiting
+(show-paren-mode 1)                          ;; Shows the opposing side of parentheses
+(savehist-mode 1)                            ;; Keeps track of previous minibuffer inputs
+(setq apropos-do-all t)                      ;; Shows information about any command or function within emacs
+(setq save-interprogram-paste-before-kill t) ;; Saves clipboard to killring automatically in case of killing
+(setq mouse-yank-at-point t)                 ;; Middle mouse button inserts contents of primary selection at cursor position, regardless of where you click
+(setq require-final-newline t)               ;; Automatically inserts a newline at the end of files that do not have one
+(setq visible-bell t)                        ;; Emacs will render a flashing indicator, rather than a beeping sound
+(setq load-prefer-newer t)                   ;; If emacs has an outdated verison of a file open, it will automatically open the newest version
+(setq backup-by-copying t)                   ;; Emacs will make a copy of the file and use that as the backup, rather than renaming the original file
+
+(add-to-list 'initial-frame-alist '(fullscreen . maximized)) ;; Maximize window on startup
+
+(global-font-lock-mode 1)
+(set-face-attribute 'default nil :font "Consolas-16")
+
+;; After startup, it is important you reset this to some reasonable default. A large 
+;; gc-cons-threshold will cause freezing and stuttering during long-term 
+;; interactive use. I find these to be nice defaults
+(setq gc-cons-threshold 16777216
+      gc-cons-percentage 0.1
+      file-name-handler-alist last-file-name-handler-alist)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("64bbc123707a1cc25f145921589d0708c4b6789015e2c50a2ec23cafcee76940" "904a32b333875179994b5a4612b5edd4d3fc1a242a9efd2df557b81788f34610" "42493c75393a0fedee66afc08e6de2c0e95b5764c5b9c39c9544e24212ad1e97" "c8b3d9364302b16318e0f231981e94cbe4806cb5cde5732c3e5c3e05e1472434" "38c0c668d8ac3841cb9608522ca116067177c92feeabc6f002a27249976d7434" "dc162c9d5ce3a14d3267645bb7fa4104bf5c797585d2eca5545de40cd731c444" "b5928c2c080b07b7102530c37c8f6e94df1d7efb7b97d2e5f205e7487c8a7059" "f18ddc74615d209e9a1d2ebe35def0fd0fc36ccc4363c5b57e3c0e5d0d6337f2" default)))
