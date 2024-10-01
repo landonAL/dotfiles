@@ -189,7 +189,10 @@
 (rc/require 'move-text)
 
 (global-set-key (kbd "M-p") 'move-text-up)
+(global-set-key (kbd "M-<up>") 'move-text-up)
+
 (global-set-key (kbd "M-n") 'move-text-down)
+(global-set-key (kbd "M-<down>") 'move-text-down)
 
 ;; Packages that don't require configuration
 (rc/require
