@@ -1,5 +1,7 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
+(setq custom-file "~/.emacs.custom.el")
+
 (package-initialize)
 (require 'use-package)
 
@@ -30,44 +32,44 @@
 
 (setq-default inhibit-splash-screen t
               make-backup-files nil
-	      auto-save-default nil
-	      create-lockfiles nil
+	          auto-save-default nil
+	          create-lockfiles nil
               tab-width 4
               indent-tabs-mode nil
               compilation-scroll-output t
               electric-pair-mode t
-	      initial-scratch-message nil
-	      sentence-end-double-space nil
-	      ring-bell-function 'ignore
-	      save-interprogram-paste-before-kill t
-	      use-dialog-box nil
-	      mark-even-if-inactive nil
-	      kill-whole-line t
-	      fast-but-imprecise-scrolling t
-	      load-prefer-newer t
-	      confirm-kill-processes nil
-	      native-comp-async-report-warnings-errors 'silent
-	      truncate-string-ellipsis "…"
-	      help-window-select t
-	      scroll-preserve-screen-position t
-	      completions-detailed t
-	      next-error-message-highlight t
-	      read-minibuffer-restore-windows t
-	      kill-do-not-save-duplicates t
-	      confirm-kill-emacs 'y-or-n-p
-	      x-alt-keysym 'meta
-	      mouse-wheel-tilt-scroll t
-	      mouse-wheel-flip-direction t
-	      truncate-lines t
-	      dired-use-ls-dired nil
-	      dired-create-destination-dirs 'ask
-	      dired-kill-when-opening-new-dired-buffer t
-	      dired-do-revert-buffer t
-	      dired-mark-region t
-	      read-process-output-max (* 1024 1024)
-	      enable-recursive-minibuffers t
-	      sh-basic-offset 2
-	      sh-basic-indentation 4)
+	          initial-scratch-message nil
+	          sentence-end-double-space nil
+	          ring-bell-function 'ignore
+	          save-interprogram-paste-before-kill t
+	          use-dialog-box nil
+	          mark-even-if-inactive nil
+	          kill-whole-line t
+	          fast-but-imprecise-scrolling t
+	          load-prefer-newer t
+	          confirm-kill-processes nil
+	          native-comp-async-report-warnings-errors 'silent
+	          truncate-string-ellipsis "…"
+	          help-window-select t
+	          scroll-preserve-screen-position t
+	          completions-detailed t
+	          next-error-message-highlight t
+	          read-minibuffer-restore-windows t
+	          kill-do-not-save-duplicates t
+	          confirm-kill-emacs 'y-or-n-p
+	          x-alt-keysym 'meta
+	          mouse-wheel-tilt-scroll t
+	          mouse-wheel-flip-direction t
+	          truncate-lines t
+	          dired-use-ls-dired nil
+	          dired-create-destination-dirs 'ask
+	          dired-kill-when-opening-new-dired-buffer t
+	          dired-do-revert-buffer t
+	          dired-mark-region t
+	          read-process-output-max (* 1024 1024)
+	          enable-recursive-minibuffers t
+	          sh-basic-offset 2
+	          sh-basic-indentation 4)
 
 (set-charset-priority 'unicode)
 (prefer-coding-system 'utf-8-unix)
@@ -222,16 +224,5 @@
  'rfc-mode
  'sml-mode
  )
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(yaml-mode uxntal-mode typescript-mode tuareg toml-mode tide sml-mode smex scala-mode rust-mode rfc-mode racket-mode qml-mode purescript-mode proof-general powershell php-mode paredit org-cliplink nix-mode nim-mode nginx-mode multiple-cursors move-text markdown-mode magit lua-mode kotlin-mode jinja2-mode ido-completing-read+ helm-ls-git helm-git-grep haskell-mode graphviz-dot-mode go-mode glsl-mode elpy dockerfile-mode dash-functional d-mode cmake-mode clojure-mode ag)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
+(load-file custom-file)
