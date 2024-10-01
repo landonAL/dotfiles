@@ -46,7 +46,7 @@ bindsym $mod+q kill
 bindsym $mod+s exec --no-startup-id i3-dmenu-desktop
 
 # add space between each window
-gaps inner 10
+gaps inner 7
 
 # gaps used only when more than one container is on the workspace
 smart_gaps on
