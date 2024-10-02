@@ -4,6 +4,7 @@
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const int startwithgaps      = 1;        /* 1 means gaps are used by default */
 static const unsigned int gappx     = 7;        /* gaps between windows */
+static const int onlyMultWindow     = 1;        /* will only render gaps if multiple windows are open */
 static const unsigned int snap      = 8;        /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
