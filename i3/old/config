@@ -45,8 +45,16 @@ bindsym $mod+q kill
 # installed.
 bindsym $mod+s exec --no-startup-id i3-dmenu-desktop
 
+# set wallpaper
+exec --no-startup-id feh --bg-fill ~/wallpapers/macos_mojave.jpg
+
+# remove titlebars
+default_border pixel 2
+default_floating_border pixel 2
+
 # add space between each window
 gaps inner 7
+gaps outer 0
 
 # gaps used only when more than one container is on the workspace
 smart_gaps on
@@ -140,4 +148,3 @@ bar {
 bindsym $mod+r mode "resize"
 focus_follows_mouse yes
 hide_edge_borders both
-
