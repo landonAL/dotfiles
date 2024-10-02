@@ -2,11 +2,24 @@
 
 (setq custom-file "~/.emacs.custom.el")
 
-(package-initialize)
-(require 'use-package)
+(setq gc-cons-threshold most-positive-fixnum ; 2^61 bytes
+      gc-cons-percentage 0.6)
 
-(setq-default gc-cons-threshold 100000000
-              max-specpdl-size 5000)
+(setq package-enable-at-startup nil)
+(package-initialize)
+
+(setq gc-cons-threshold 80000000 ; 80 MiB
+      gc-cons-percentage 1)
+
+(setq inhibit-startup-message t)
+
+;; emergency security fix
+;; https://bugs.debian.org/766397
+(with-eval-after-load 'enriched
+  (defun enriched-decode-display-prop (start end &optional param)
+    (list start end)))
+
+(require 'use-package)
 
 (add-to-list 'load-path "~/.emacs.local/")
 
@@ -32,14 +45,14 @@
 
 (setq-default inhibit-splash-screen t
               make-backup-files nil
-	          auto-save-default nil
-	          create-lockfiles nil
+	      auto-save-default nil
+	      create-lockfiles nil
               tab-width 4
               indent-tabs-mode nil
               compilation-scroll-output t
               electric-pair-mode t
-	          initial-scratch-message nil
-	          sentence-end-double-space nil
+	      initial-scratch-message nil
+	      sentence-end-double-space nil
 	          ring-bell-function 'ignore
 	          save-interprogram-paste-before-kill t
 	          use-dialog-box nil
@@ -94,16 +107,16 @@
 (add-hook 'compilation-mode-hook 'visual-line-mode)
 
 ;; IDO
-(rc/require 'smex 'ido-completing-read+)
+; (rc/require 'smex 'ido-completing-read+)
 
-(require 'ido-completing-read+)
+; (require 'ido-completing-read+)
 
-(ido-mode 1)
-(ido-everywhere 1)
-(ido-ubiquitous-mode 1)
+; (ido-mode 1)
+; (ido-everywhere 1)
+; (ido-ubiquitous-mode 1)
 
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+; (global-set-key (kbd "M-x") 'smex)
+; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;; C-mode
 (setq-default c-basic-offset 4
