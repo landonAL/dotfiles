@@ -1,31 +1,19 @@
 ;; -*- coding: utf-8; lexical-binding: t -*-
 
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")
+                         ("gnu" . "https://elpa.gnu.org/packages/")
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 
-(defvar rc/package-contents-refreshed nil)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
-(defun rc/package-refresh-contents-once ()
-  (when (not rc/package-contents-refreshed)
-    (setq rc/package-contents-refreshed t)
-    (package-refresh-contents)))
-
-(defun rc/require-one-package (package)
-  (when (not (package-installed-p package))
-    (rc/package-refresh-contents-once)
-    (package-install package)))
-
-(defun rc/require (&rest packages)
-  (dolist (package packages)
-    (rc/require-one-package package)))
+(setq use-package-always-ensure t)
 
 (defun rc/require-theme (theme)
-  (let ((theme-package (->> theme
-                            (symbol-name)
-                            (funcall (-flip #'concat) "-theme")
-                            (intern))))
-    (rc/require theme-package)
+  (let ((theme-package (intern (concat (symbol-name theme) "-theme"))))
+    (unless (package-installed-p theme-package)
+      (package-install theme-package))
+    
     (load-theme theme t)))
-
-(rc/require 'dash)
-(require 'dash)

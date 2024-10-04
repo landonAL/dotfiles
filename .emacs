@@ -2,16 +2,26 @@
 
 (setq custom-file "~/.emacs.custom.el")
 
-(setq gc-cons-threshold most-positive-fixnum ; 2^61 bytes
-      gc-cons-percentage 0.6)
+(add-to-list 'load-path "~/.emacs.local/")
+(load-file "~/.emacs.rc/rc.el")
+(load-file "~/.emacs.rc/misc-rc.el")
 
-(setq package-enable-at-startup nil)
-(package-initialize)
+;; optimization
+(defvar last-file-name-handler-alist file-name-handler-alist)
+(setq file-name-handler-alist nil)
 
-(setq gc-cons-threshold 80000000 ; 80 MiB
-      gc-cons-percentage 1)
+(defun config:defer-gc ()
+  (setq gc-cons-threshold most-positive-fixnum))
 
-(setq inhibit-startup-message t)
+(defun config:do-gc ()
+  (let ((current-gc (car (memory-use-counts))))
+    (when (> current-gc (* 32 1024 1024))
+      (garbage-collect))
+
+    (config:defer-gc)))
+
+(config:defer-gc)
+(add-hook 'minibuffer-exit-hook #'config:do-gc)
 
 ;; emergency security fix
 ;; https://bugs.debian.org/766397
@@ -19,18 +29,11 @@
   (defun enriched-decode-display-prop (start end &optional param)
     (list start end)))
 
-(require 'use-package)
-
-(add-to-list 'load-path "~/.emacs.local/")
-
-(load-file "~/.emacs.rc/rc.el")
-(load-file "~/.emacs.rc/misc-rc.el")
-
-;; General
+;; general
 (add-to-list 'default-frame-alist `(font . "Iosevka-18"))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-; (rc/require-theme 'gruber-darker)
+(rc/require-theme 'gruber-darker)
 
 (when (window-system)
   (tool-bar-mode -1)
@@ -44,6 +47,7 @@
 (setq default-directory (concat (getenv "HOME") "/"))
 
 (setq-default inhibit-splash-screen t
+	          inhibit-startup-message t
               make-backup-files nil
 	          auto-save-default nil
 	          create-lockfiles nil
@@ -82,7 +86,16 @@
 	          read-process-output-max (* 1024 1024)
 	          enable-recursive-minibuffers t
 	          sh-basic-offset 2
-	          sh-basic-indentation 4)
+	          sh-basic-indentation 4
+              jit-lock-contextually t
+              bidi-display-reordering 'left-to-right
+              bidi-paragraph-direction 'left-to-right
+              bidi-inhibit-bpa t
+              cursor-in-non-selected-windows nil
+              frame-inhibit-implied-resize t
+              ffap-machine-p-known 'reject
+              inhibit-compacting-font-caches t
+              initial-major-mode 'fundamental-mode)
 
 (set-charset-priority 'unicode)
 (prefer-coding-system 'utf-8-unix)
@@ -99,14 +112,14 @@
 (global-so-long-mode)
 (minibuffer-depth-indicate-mode)
 
-;; Uncomment this code to highlight the active line
+;; uncomment this code to highlight the active line
 ; (require 'hl-line)
 ; (add-hook 'prog-mode-hook #'hl-line-mode)
 ; (add-hook 'text-mode-hook #'hl-line-mode)
 
 (add-hook 'compilation-mode-hook 'visual-line-mode)
 
-;; IDO
+;; ido
 ; (rc/require 'smex 'ido-completing-read+)
 
 ; (require 'ido-completing-read+)
@@ -118,7 +131,7 @@
 ; (global-set-key (kbd "M-x") 'smex)
 ; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
-;; C-mode
+;; c-mode
 (setq-default c-basic-offset 4
               c-default-style '((java-mode . "java")
                                 (awk-mode . "awk")
@@ -144,7 +157,7 @@
 
 (require 'c3-mode)
 
-;; Whitespace mode
+;; whitespace mode
 (defun rc/set-up-whitespace-handling ()
   (interactive)
   (whitespace-mode 0)
@@ -170,17 +183,24 @@
 (add-hook 'yaml-mode-hook 'rc/set-up-whitespace-handling)
 (add-hook 'porth-mode-hook 'rc/set-up-whitespace-handling)
 
-;; Magit
-(rc/require 'cl-lib)
-(rc/require 'magit)
+;; magit
+(use-package cl-lib
+  :ensure t
+  :defer t)
+
+(use-package magit
+  :ensure t
+  :defer t)
 
 (setq magit-auto-revert-mode nil)
 
 (global-set-key (kbd "C-c m s") 'magit-status)
 (global-set-key (kbd "C-c m l") 'magit-log)
 
-;; Multiple cursors
-(rc/require 'multiple-cursors)
+;; multiple cursors
+(use-package multiple-cursors
+  :ensure t
+  :defer t)
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->")         'mc/mark-next-like-this)
@@ -189,17 +209,10 @@
 (global-set-key (kbd "C-\"")        'mc/skip-to-next-like-this)
 (global-set-key (kbd "C-:")         'mc/skip-to-previous-like-this)
 
-;; Dired
-(require 'dired-x)
-
-(setq dired-omit-files
-      (concat dired-omit-files "\\|^\\..+$"))
-(setq-default dired-dwim-target t)
-(setq dired-listing-switches "-alh")
-(setq dired-mouse-drag-files t)
-
-;; Move text
-(rc/require 'move-text)
+;; move text
+(use-package move-text
+  :ensure t
+  :defer t)
 
 (global-set-key (kbd "M-p") 'move-text-up)
 (global-set-key (kbd "M-<up>") 'move-text-up)
@@ -207,38 +220,130 @@
 (global-set-key (kbd "M-n") 'move-text-down)
 (global-set-key (kbd "M-<down>") 'move-text-down)
 
-;; Packages that don't require configuration
-(rc/require
- 'scala-mode
- 'd-mode
- 'yaml-mode
- 'glsl-mode
- 'tuareg
- 'lua-mode
- 'less-css-mode
- 'graphviz-dot-mode
- 'clojure-mode
- 'cmake-mode
- 'rust-mode
- 'csharp-mode
- 'nim-mode
- 'jinja2-mode
- 'markdown-mode
- 'purescript-mode
- 'nix-mode
- 'dockerfile-mode
- 'toml-mode
- 'nginx-mode
- 'kotlin-mode
- 'go-mode
- 'php-mode
- 'racket-mode
- 'qml-mode
- 'ag
- 'elpy
- 'typescript-mode
- 'rfc-mode
- 'sml-mode
- )
+;; packages that don't require configuration
+(use-package scala-mode
+  :ensure t
+  :defer t)
+
+(use-package d-mode
+  :ensure t
+  :defer t)
+
+(use-package yaml-mode
+  :ensure t
+  :defer t)
+
+(use-package glsl-mode
+  :ensure t
+  :defer t)
+
+(use-package tuareg
+  :ensure t
+  :defer t)
+
+(use-package lua-mode
+  :ensure t
+  :defer t)
+
+(use-package less-css-mode
+  :ensure t
+  :defer t)
+
+(use-package graphviz-dot-mode
+  :ensure t
+  :defer t)
+
+(use-package clojure-mode
+  :ensure t
+  :defer t)
+
+(use-package cmake-mode
+  :ensure t
+  :defer t)
+
+(use-package rust-mode
+  :ensure t
+  :defer t)
+
+(use-package csharp-mode
+  :ensure t
+  :defer t)
+
+(use-package nim-mode
+  :ensure t
+  :defer t)
+
+(use-package jinja2-mode
+  :ensure t
+  :defer t)
+
+(use-package markdown-mode
+  :ensure t
+  :defer t)
+
+(use-package purescript-mode
+  :ensure t
+  :defer t)
+
+(use-package nix-mode
+  :ensure t
+  :defer t)
+
+(use-package dockerfile-mode
+  :ensure t
+  :defer t)
+
+(use-package toml-mode
+  :ensure t
+  :defer t)
+
+(use-package nginx-mode
+  :ensure t
+  :defer t)
+
+(use-package kotlin-mode
+  :ensure t
+  :defer t)
+
+(use-package go-mode
+  :ensure t
+  :defer t)
+
+(use-package php-mode
+  :ensure t
+  :defer t)
+
+(use-package racket-mode
+  :ensure t
+  :defer t)
+
+(use-package qml-mode
+  :ensure t
+  :defer t)
+
+(use-package ag
+  :ensure t
+  :defer t)
+
+(use-package elpy
+  :ensure t
+  :defer t)
+
+(use-package typescript-mode
+  :ensure t
+  :defer t)
+
+(use-package rfc-mode
+  :ensure t
+  :defer t)
+
+(use-package sml-mode
+  :ensure t
+  :defer t)
+
+(defun restore-file-name-handlers ()
+  (setq file-name-handler-alist last-file-name-handler-alist))
+
+(add-hook 'emacs-startup-hook 'restore-file-name-handlers)
 
 (load-file custom-file)
