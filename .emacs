@@ -30,7 +30,7 @@
 (add-to-list 'default-frame-alist `(font . "Iosevka-18"))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-(rc/require-theme 'gruber-darker)
+; (rc/require-theme 'gruber-darker)
 
 (when (window-system)
   (tool-bar-mode -1)
@@ -45,14 +45,14 @@
 
 (setq-default inhibit-splash-screen t
               make-backup-files nil
-	      auto-save-default nil
-	      create-lockfiles nil
+	          auto-save-default nil
+	          create-lockfiles nil
               tab-width 4
               indent-tabs-mode nil
               compilation-scroll-output t
               electric-pair-mode t
-	      initial-scratch-message nil
-	      sentence-end-double-space nil
+	          initial-scratch-message nil
+	          sentence-end-double-space nil
 	          ring-bell-function 'ignore
 	          save-interprogram-paste-before-kill t
 	          use-dialog-box nil
