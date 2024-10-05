@@ -111,6 +111,7 @@
 (global-goto-address-mode)
 (global-so-long-mode)
 (minibuffer-depth-indicate-mode)
+(global-auto-revert-mode t)
 
 ;; uncomment this code to highlight the active line
 ; (require 'hl-line)
