@@ -12,9 +12,6 @@ set $mod Mod4
 # Your preferred terminal emulator
 set $term ghostty
 
-# Your preferred application launcher
-set $menu i3-dmenu-desktop
-
 # Moving mouse over windows will change focus
 focus_follows_mouse yes
 
@@ -31,6 +28,9 @@ smart_gaps on
 # Draw borders around container only if it is not the only container on this workspace
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
+
+# Default window layout will be tabbed
+workspace_layout tabbed
 
 ### Output configuration
 #
@@ -82,7 +82,7 @@ bindsym $mod+t exec $term
 bindsym $mod+q kill
 
 # Start your launcher
-bindsym $mod+s exec $menu
+bindsym $mod+s exec $term -e ~/.config/i3/scripts/launcher.sh
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -223,3 +223,8 @@ bindsym Print exec grim
 bar {
     status_command i3status
 }
+
+### Startup
+#
+# Change wallpaper
+exec --no-startup-id emacs --daemon
