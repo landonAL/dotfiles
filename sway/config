@@ -32,6 +32,8 @@ smart_borders on
 # Default window layout will be tabbed
 workspace_layout tabbed
 
+font pango:Iosevka 10
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
