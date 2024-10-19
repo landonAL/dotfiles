@@ -51,7 +51,7 @@ x = 0
 y = 0
 
 [colors.primary]
-background = "#232323"
+background = "#181818"
 foreground = "#C0C5CE"
 
 [colors.bright]
