@@ -1,31 +1,26 @@
-font-family = Iosevka Term
+font-family = Departure Mono
 font-style = Regular
-font-size = 14
-
+font-size = 16
 cursor-style-blink = true
-
 shell-integration = zsh
-shell-integration-features = no-cursor, no-sudo, no-title
-
+shell-integration-features = no-cursor, no-sudo, title
 keybind = ctrl+h=new_split:right
 keybind = ctrl+v=new_split:down
 keybind = ctrl+n=new_tab
 keybind = ctrl+e=close_window
-# keybind = ctrl+t=toggle_window_decorations
 keybind = ctrl+shift+r=reload_config
 keybind = ctrl+left=previous_tab
 keybind = ctrl+right=next_tab
-
-window-decoration = true
+window-decoration = false
 gtk-titlebar = false
-# title = "Ghostty"
 window-padding-balance = true
-
 confirm-close-surface = false
 clipboard-paste-protection = false
 unfocused-split-opacity = 1.0
 focus-follows-mouse = true
-
-background = #181818
-foreground = #f4f4ff
+gtk-single-instance = true
+copy-on-select = false
+selection-invert-fg-bg = true
+theme = rose-pine
+background = #000000
 window-padding-color=extend-always
