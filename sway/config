@@ -73,6 +73,15 @@ font pango:Iosevka 10
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+input * {
+    xkb_layout us,latam
+    xkb_switch_layout next
+    xkb_options grp:caps_toggle
+
+    repeat_delay 200
+    repeat_rate 30
+}
+
 ### Key bindings
 #
 # Basics:
