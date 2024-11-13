@@ -1,12 +1,18 @@
+# Colorscheme
+theme = rose-pine-dawn
+background = E8E8EF
+foreground = 333333
+selection-invert-fg-bg = true
+
+# Font
 font-family = Iosevka Term
 font-style = Regular
 font-size = 16
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
-cursor-style-blink = true
-shell-integration = zsh
-shell-integration-features = no-cursor, no-sudo, title
+
+# Keybinds
 keybind = ctrl+h=new_split:right
 keybind = ctrl+v=new_split:down
 keybind = ctrl+n=new_tab
@@ -14,16 +20,18 @@ keybind = ctrl+e=close_window
 keybind = ctrl+shift+r=reload_config
 keybind = ctrl+left=previous_tab
 keybind = ctrl+right=next_tab
+keybind = ctrl+m=toggle_window_decorations
+
+# Native
+gtk-single-instance = true
 window-decoration = false
-gtk-titlebar = false
+
+# Miscellaneous
+cursor-style-blink = true
 window-padding-balance = true
 confirm-close-surface = false
-clipboard-paste-protection = false
+clipboard-paste-protection = true
 unfocused-split-opacity = 1.0
 focus-follows-mouse = true
-gtk-single-instance = true
 copy-on-select = false
-selection-invert-fg-bg = true
-theme = rose-pine
-background = #000000
 window-padding-color=extend-always
