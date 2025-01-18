@@ -143,9 +143,9 @@
 	{trigger: "sim=", replacement: "\\simeq", options: "mA"},
     {trigger: "prop", replacement: "\\propto", options: "mA"},
 
-
     {trigger: "<->", replacement: "\\leftrightarrow ", options: "mA"},
 	{trigger: "->", replacement: "\\to", options: "mA"},
+    {trigger: "<-", replacement: "\\leftarrow", options: "mA"},
 	{trigger: "!>", replacement: "\\mapsto", options: "mA"},
     {trigger: "=>", replacement: "\\implies", options: "mA"},
 	{trigger: "=<", replacement: "\\impliedby", options: "mA"},
