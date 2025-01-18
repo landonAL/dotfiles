@@ -1,6 +1,7 @@
 [
     // Math mode
 	{trigger: "mk", replacement: "$$0$", options: "tA"},
+    {trigger: "2mk", replacement: "$$$0$$", options: "tA"},
 	{trigger: "dm", replacement: "$$\n$0\n$$", options: "tAw"},
 	{trigger: "beg", replacement: "\\begin{$0}\n$1\n\\end{$0}", options: "mA"},
 
@@ -41,7 +42,7 @@
     {trigger: "@R", replacement: "P", options: "mA"},
 	{trigger: "@s", replacement: "\\sigma", options: "mA"},
 	{trigger: "@S", replacement: "\\Sigma", options: "mA"},
-    {trigger: "@se", replacement: "\\varsigma", options: "mA"},
+    {trigger: ":s", replacement: "\\varsigma", options: "mA"},
     {trigger: "@ta", replacement: "\\tau", options: "mA"},
     {trigger: "@Ta", replacement: "T", options: "mA"},
 	{trigger: "@u", replacement: "\\upsilon", options: "mA"},
