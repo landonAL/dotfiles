@@ -1,0 +1,11 @@
+{
+    "files.autoSave": "onWindowChange",
+    "workbench.list.smoothScrolling": true,
+    "editor.smoothScrolling": true,
+    "terminal.integrated.smoothScrolling": true,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "window.menuBarVisibility": "toggle",
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontSize": 15,
+    "telemetry.telemetryLevel": "off",
+}
