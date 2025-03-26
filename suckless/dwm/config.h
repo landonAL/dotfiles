@@ -1,14 +1,14 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const int startwithgaps      = 1;        /* 1 means gaps are used by default */
-static const unsigned int gappx     = 7;        /* gaps between windows */
-static const int onlyMultWindow     = 1;        /* will only render gaps if multiple windows are open */
-static const unsigned int snap      = 8;        /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const int attachbelow        = 1;        /* 1 means attach after the currently active window */
+static const unsigned int borderpx  = 2; /* border pixel of windows */
+static const int startwithgaps      = 1; /* 1 means gaps are used by default */
+static const unsigned int gappx     = 7; /* gaps between windows */
+static const int onlyMultWindow     = 0; /* will only render gaps if multiple windows are open */
+static const unsigned int snap      = 8; /* snap pixel */
+static const int showbar            = 1; /* 0 means no bar */
+static const int topbar             = 1; /* 0 means bottom bar */
+static const int attachbelow        = 1; /* 1 means attach after the currently active window */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -27,7 +27,7 @@ static const Rule rules[] = {
  	 *	WM_CLASS(STRING) = instance, class
       	 *	WM_NAME(STRING) = title
       	 */
-  
+
      	/* class      instance    title       tags mask     isfloating   monitor */
      	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
      	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "ghostty", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -115,4 +115,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-

@@ -1,0 +1,198 @@
+
+math - perform mathematics calculations
+
+mmaatthh [(--ss | ----ssccaallee) _N] [(--bb | ----bbaassee) _B_A_S_E] _E_X_P_R_E_S_S_I_O_N ...
+
+DDEESSCCRRIIPPTTIIOONN
+mmaatthh  performs  mathematical calculations.  It supports simple operations such as addition, subtraction, and so
+on, as well as functions like aabbss(()), ssqqrrtt(()) and llnn(()).
+
+By default, the output shows up to 6 decimal places.  To change the number of decimal places, use  the  ----ssccaallee
+option, including ----ssccaallee==00 for integer output.  Trailing zeroes will always be trimmed.
+
+Keep in mind that parameter expansion happens before expressions are evaluated.  This can be very useful in or‐
+der to perform calculations involving shell variables or the output of command substitutions, but it also means
+that  parenthesis ((())) and the asterisk (**) glob character have to be escaped or quoted.  xx can also be used to
+denote multiplication, but it needs to be followed by whitespace to distinguish it from hexadecimal numbers.
+
+Parentheses for functions are optional - mmaatthh ssiinn ppii prints 00.  However, a comma will bind to the  inner  func‐
+tion,  so mmaatthh ppooww ssiinn 33,, 55 is an error because it tries to give ssiinn the arguments 33 and 55.  When in doubt, use
+parentheses.
+
+mmaatthh ignores whitespace between arguments and takes its input as multiple arguments (internally joined  with  a
+space), so mmaatthh 22 ++22 and mmaatthh ""22 ++    22"" work the same.  mmaatthh 22 22 is an error.
+
+The following options are available:
+
+--ss _N or ----ssccaallee _N
+       Sets the scale of the result.  NN must be an integer or the word "max" for the maximum scale.  A scale of
+       zero  causes results to be truncated, not rounded. Any non-integer component is thrown away.  So 33//22 re‐
+       turns 11 rather than 22 which 11..55 would normally round to.  This is for compatibility with  bbcc  which  was
+       the  basis for this command prior to fish 3.0.0.  Scale values greater than zero causes the result to be
+       rounded using the usual rules to the specified number of decimal places.
+
+--bb _B_A_S_E or ----bbaassee _B_A_S_E
+       Sets the numeric base used for output (mmaatthh always understands hexadecimal numbers as input).   It  cur‐
+       rently  understands  "hex" or "16" for hexadecimal and "octal" or "8" for octal and implies a scale of 0
+       (other scales cause an error), so it will truncate the result down to an integer.  This might change  in
+       the  future.   Hex  numbers will be printed with a 00xx prefix.  Octal numbers will have a prefix of 00 but
+       aren't understood by mmaatthh as input.
+
+--hh or ----hheellpp
+       Displays help about using this command.
+
+RREETTUURRNN VVAALLUUEESS
+If the expression is successfully evaluated and doesn't over/underflow or return NaN the return ssttaattuuss is  zero
+(success) else one.
+
+SSYYNNTTAAXX
+mmaatthh knows some operators, constants, functions and can (obviously) read numbers.
+
+For  numbers,  .. is always the radix character regardless of locale - 22..55, not 22,,55.  Scientific notation (1100ee55)
+and hexadecimal (00xxFFFF) are also available.
+
+mmaatthh allows you to use underscores as visual  separators  for  digit  grouping.  For  example,  you  can  write
+11__000000__000000, 00xx__8899__AABB__CCDD__EEFF, and 11..223344__556677__ee8899.
+
+OOPPEERRAATTOORRSS
+mmaatthh knows the following operators:
+
+++      for addition
+
+--      for subtraction
+
+** oorr xx for multiplication. ** is the glob character and needs to be quoted or escaped, xx needs to be followed by
+       whitespace or it looks like 00xx hexadecimal notation.
+
+//      for division
+
+^^      for exponentiation
+
+%%      for modulo
+
+(( oorr )) for grouping. These need to be quoted or escaped because (()) denotes a command substitution.
+
+They are all used in an infix manner - 55 ++ 22, not ++ 55 22.
+
+CCOONNSSTTAANNTTSS
+mmaatthh knows the following constants:
+
+ee      Euler's number
+
+ppii     π, you know this one.  Half of Tau
+
+ttaauu    Equivalent to 2π, or the number of radians in a circle
+
+Use them without a leading $$ - ppii -- 33 should be about 0.
+
+FFUUNNCCTTIIOONNSS
+mmaatthh supports the following functions:
+
+aabbss    the absolute value, with positive sign
+
+aaccooss   arc cosine
+
+aassiinn   arc sine
+
+aattaann   arc tangent
+
+aattaann22  arc tangent of two variables
+
+bbiittaanndd,, bbiittoorr aanndd bbiittxxoorr
+       perform  bitwise  operations.   These will throw away any non-integer parts and interpret the rest as an
+       int.
+
+       Note: bbiittnnoott and bbiittnnaanndd don't exist. This is because numbers in math don't really have a _w_i_d_t_h in terms
+       of bits, and these operations necessarily care about leading zeroes.
+
+       If you need to negate a specific number you can do it with an xor with a mask, e.g.:
+
+          > math --base=hex bitxor 0x0F, 0xFF
+          0xF0
+
+          > math --base=hex bitxor 0x2, 0x3
+          # Here we mask with 0x3 == 0b111, so our number is 3 bits wide
+          # Only the 1 bit isn't set.
+          0x1
+
+cceeiill   round number up to the nearest integer
+
+ccooss    the cosine
+
+ccoosshh   hyperbolic cosine
+
+eexxpp    the base-e exponential function
+
+ffaacc    factorial - also known as xx!! (xx ** ((xx -- 11)) ** ((xx -- 22)) ** ...... ** 11)
+
+fflloooorr  round number down to the nearest integer
+
+llnn     the base-e logarithm
+
+lloogg oorr lloogg1100
+       the base-10 logarithm
+
+lloogg22   the base-2 logarithm
+
+mmaaxx    returns the largest of the given numbers - this takes an arbitrary number of  arguments  (but  at  least
+       one)
+
+mmiinn    returns  the  smallest  of the given numbers - this takes an arbitrary number of arguments (but at least
+       one)
+
+nnccrr    "from n choose r" combination function - how many subsets of size r can be taken from n  (order  doesn't
+       matter)
+
+nnpprr    the number of subsets of size r that can be taken from a set of n elements (including different order)
+
+ppooww((xx,,yy))
+       returns x to the y (and can be written as xx ^^ yy)
+
+rroouunndd  rounds to the nearest integer, away from 0
+
+ssiinn    the sine function
+
+ssiinnhh   the hyperbolic sine
+
+ssqqrrtt   the square root - (can also be written as xx ^^ 00..55)
+
+ttaann    the tangent
+
+ttaannhh   the hyperbolic tangent
+
+All of the trigonometric functions use radians (the pi-based scale, not 360°).
+
+EEXXAAMMPPLLEESS
+mmaatthh 11++11 outputs 2.
+
+mmaatthh $$ssttaattuuss -- 112288 outputs the numerical exit status of the last command minus 128.
+
+mmaatthh 1100 // 66 outputs 11..666666666677.
+
+mmaatthh --ss00 1100..00 // 66..00 outputs 11.
+
+mmaatthh --ss33 1100 // 66 outputs 11..666666.
+
+mmaatthh ""ssiinn((ppii))"" outputs 00.
+
+mmaatthh 55 \\** 22 or mmaatthh ""55 ** 22"" or mmaatthh 55 ""**"" 22 all output 1100.
+
+mmaatthh 00xxFFFF outputs 255, mmaatthh 00 xx 33 outputs 0 (because it computes 0 multiplied by 3).
+
+mmaatthh bbiittaanndd 00xxFFEE,, 00xx22ee outputs 46.
+
+mmaatthh ""bbiittoorr((99,,22))"" outputs 11.
+
+mmaatthh ----bbaassee==hheexx 119922 prints 00xxcc00.
+
+mmaatthh ''nnccrr((4499,,66))'' prints 13983816 - that's the number of possible picks in 6-from-49 lotto.
+
+mmaatthh mmaaxx 55,,22,,33,,11 prints 5.
+
+CCOOMMPPAATTIIBBIILLIITTYY NNOOTTEESS
+Fish 1.x and 2.x releases relied on the bbcc command for handling mmaatthh expressions. Starting with fish 3.0.0 fish
+uses the tinyexpr library and evaluates the expression without the involvement of any external commands.
+
+You  don't  need  to use ---- before the expression, even if it begins with a minus sign which might otherwise be
+interpreted as an invalid option. If you do insert ---- before the expression, it will cause option  scanning  to
+stop just like for every other command and it won't be part of the expression.

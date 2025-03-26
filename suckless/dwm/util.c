@@ -18,9 +18,7 @@ die(const char *fmt, ...)
 	if (fmt[0] && fmt[strlen(fmt)-1] == ':') {
 		fputc(' ', stderr);
 		perror(NULL);
-	} else {
-		fputc('\n', stderr);
-	}
+	} else fputc('\n', stderr);
 
 	exit(1);
 }
@@ -32,5 +30,6 @@ ecalloc(size_t nmemb, size_t size)
 
 	if (!(p = calloc(nmemb, size)))
 		die("calloc:");
+
 	return p;
 }

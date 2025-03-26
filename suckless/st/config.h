@@ -8,6 +8,11 @@
 static char *font = "Lilex Nerd Font Mono:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 0;
 
+/* disable non-normal fonts globally */
+static int disablebold = 1;
+static int disableitalic = 1;
+static int disableroman = 1;
+
 /*
  * What program is execed by st depends of these precedence rules:
  * 1: program passed with -e
@@ -16,7 +21,7 @@ static int borderpx = 0;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/bin/fish";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -142,11 +147,24 @@ static unsigned int defaultrcs = 256;
 static unsigned int cursorshape = 2;
 
 /*
+ * Whether to use pixel geometry or cell geometry
+ */
+
+static Geometry geometry = CellGeometry;
+
+/*
  * Default columns and rows numbers
  */
 
 static unsigned int cols = 80;
 static unsigned int rows = 24;
+
+/*
+ * Default width and height (including borders!)
+ */
+
+static unsigned int width = 564;
+static unsigned int height = 364;
 
 /*
  * Default colour and shape of the mouse cursor
