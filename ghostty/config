@@ -1,13 +1,13 @@
 # Colorscheme
-theme = rose-pine-dawn
-background = E8E8EF
-foreground = 333333
+theme = rose-pine
+background = 000000
+foreground = FFFFFF
 selection-invert-fg-bg = true
 
 # Font
-font-family = Iosevka Term
+font-family = Iosevka
 font-style = Regular
-font-size = 16
+font-size = 18
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
@@ -35,3 +35,8 @@ unfocused-split-opacity = 1.0
 focus-follows-mouse = true
 copy-on-select = false
 window-padding-color=extend-always
+window-padding-x = 0
+window-padding-y = 0
+title = Ghostty
+window-subtitle = working-directory
+window-vsync = false
