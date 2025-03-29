@@ -1,0 +1,7 @@
+create or edit ~/.config/gtk-4.0/gtk.css and add:
+
+.background
+{
+    margin: 0;
+    padding: 0;
+}
