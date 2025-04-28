@@ -28,6 +28,7 @@ window-decoration = false
 
 # Miscellaneous
 cursor-style-blink = true
+cursor-style = underline
 window-padding-balance = true
 confirm-close-surface = false
 clipboard-paste-protection = true
@@ -41,3 +42,4 @@ title = Ghostty
 window-subtitle = working-directory
 window-vsync = false
 shell-integration = bash
+shell-integration-features = no-cursor
