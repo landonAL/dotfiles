@@ -1,0 +1,44 @@
+\documentclass[12pt, letterpaper]{article}
+\title{Converting base 10 to base 2}
+\date{\today}
+\usepackage{amsmath}
+
+\begin{document}
+
+\maketitle
+
+In order to convert a number from base 10 to base 2, you must first identify the highest power of 2 that can go into the base 10 number.
+
+\[ 2^{10} > 1000_{10}\;|\;2^{9} < 1000_{10} \]
+
+From doing that, you must subtract 2 to that exponent (e) from the base 10 number.
+
+\[ 2^{9} = 512;\;1000-512=488  \]
+
+Next, count down the powers from 2$^{e}$ to 2$^{0}$, and continue to subtract those numbers from the base 10 number if it is able to go into it, until the base 10 number reaches 0.
+
+\[ 2^{8} = 256;\; 256 < 488;\; 488-256=232 \]
+\[ 2^{7} = 128;\; 128 < 232;\; 232-128=104...  \]
+
+Counting down from 2$^{e}$ to 2$^{0}$, if 2$^{x}$ did go into the base 10 number, mark a 1; however, if it did not go into the base 10 number, mark a 0.
+
+\[ 2^{9} < 1000; \text{The first digit in base 2 is 1}  \]
+\[ 2^{8} < 488; \text{The second digit in base 2 is 1}  \]
+\[ 2^{7} < 232; \text{The third digit in base 2 is 1}  \]
+\[ 2^{6} < 104; \text{The fourth digit in base 2 is 1}  \]
+\[ 2^{5} < 40; \text{The fifth digit in base 2 is 1}  \]
+\[ 2^{4} > 8; \text{The sixth digit in base 2 is 0}  \]
+\[ 2^{3} = 8; \text{The seventh digit in base 2 is 1}  \]
+
+Once the base 10 number becomes 0, every digit in the base 2 number afterward will be 0
+
+\[ 2^{3} = 8;\; 8 - 8 = 0;\; \text{The digits of $2^{2..0}$ will be 0}  \]
+
+The end result is the base 10 number in base 2.
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,113 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/landon/Desktop/school/coding/" . "sketch_3/")
+ ("/home/" . "landon/")
+ ("/usr/share/" . "xsessions/")
+ ("/home/landon/.emacs.d/" . "org/")
+ ("/home/landon/.config/nvim/after/" . "plugin/")
+ ("/home/landon/Desktop/school/" . "coding/")
+ ("/home/landon/Desktop/" . "orthodoxy/")
+ ("/home/landon/Documents/" . "st/")
+ ("/home/landon/.config/nvim/lua/" . "plugins/")
+ ("/home/landon/.config/nvim/" . "after/")
+ ("/home/landon/.config/" . "nvim/")
+ ("/home/landon/" . "Desktop/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/landon/Desktop/school/coding/sketch_4/"
+ "/home/landon/Desktop/orthodoxy/"
+ "/home/landon/Desktop/school/coding/sketch_3/"
+ "/home/landon/"
+ "/home/landon/Desktop/coding/"
+ "/home/landon/Desktop/orthodoxy/verses/doctrines/"
+ "/home/landon/.emacs.local/"
+ "/home/landon/Desktop/school/"
+ "/home/landon/.emacs.d/org/"
+ "/home/landon/Desktop/school/writing/"
+ "/home/landon/org/"
+ "/home/landon/.config/nvim/after/plugin/"
+ "/home/landon/Documents/st/"
+ "/home/landon/Downloads/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "resources.org"
+ "sketch_260309c.js"
+ "current study.org"
+ ".emacs"
+ "temp.c"
+ "exwm-firefox.el"
+ "temp.txt"
+ ".emacs.custom.el"
+ "tasks.org"
+ "calendar.org"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/landon/Desktop/school/coding/sketch_4/" (27075 59428 238852 192000) "sketch_260309c.js" "start.sh" "index.html" "libraries/" "sketch.properties" "../" "./")
+
+ ("/home/landon/Desktop/coding/" (27047 42633 333287 821000) "temp.c" "../" "./")
+
+ ("/home/landon/" (27075 19621 398444 365000) ".bash_history" ".viminfo" ".bash_history-01770.tmp" "wallpapers/" ".vimrc" ".bashrc" ".zshenv" ".gtkrc-2.0" ".vscode-oss/" ".e-log.log" ".e-log.log.old" ".histfile" ".zcompdump" ".npm/" "sketchbook/" ".java/" ".gradle/" ".thumbnails/" ".e/" ".elementary/" ".steampid" ".steampath" "startewm.sh" ".cargo/" ".emacs.custom.el" "asd.org" "temp.c" "org/" ".vim/" ".emacs.backup" ".xinitrc" "temp.pdf" "temp.aux" "temp.log" "temp.tex" "auto/" ".surf/" ".rustup/" ".tmux.conf" ".bash_history-10529.tmp" ".emacs" ".emacs~" ".pulse-cookie" ".steam/" ".bash_profile" ".wine/" ".fehbg" ".var/" "Arduino/" ".arduinoIDE/" ".arduino15/" "company" ".gnupg/" ".emacs.rc/" ".emacs.local/" ".emacs.d/" ".pki/" ".mozilla/" ".cache/" "ly-session.log" ".local/" ".config/" "Videos/" "Pictures/" "Music/" "Documents/" "Public/" "Downloads/" "Desktop/" ".bash_logout" "../" "./")
+
+ ("/home/landon/Desktop/school/coding/sketch_3/" (27066 41568 677816 887000) "sketch_260309c.js" "start.sh" "index.html" "libraries/" "sketch.properties" "../" "./")
+
+ ("/home/landon/Desktop/school/coding/" (27064 380 962101 696000) "sketch_3/" "sketch_1/" "sketch_2/" "root_desktop/" "circleAreaList.jsp" "trailingball.jsp" "eolball.jsp" "eol.jsp" "../" "./")
+
+ ("/home/landon/Desktop/school/" (27036 31088 499392 293000) "coding/" "temp.txt" "required-reading/" "documents/" "writing/" "../" "./")
+
+ ("/home/landon/Desktop/" (27048 17447 682355 5000) "tmp.desktop" "root.desktop" "home.desktop" "coding/" "orthodoxy/" "school/" "../" "./")
+
+ ("/home/landon/Desktop/orthodoxy/" (27045 37843 737017 345000) "current study.org" "verses/" "resources.org" "../" "./")
+
+ ("/usr/share/xsessions/" (27017 57936 421228 369000) "i3.desktop" "i3-with-shmlog.desktop" "xinitrc.desktop" "emacs.desktop" "dwm.desktop" "../" "./")
+
+ ("/home/" (26845 14884 587398 576000) "landon/" "../" "./")
+
+ ("/usr/share/" (27008 42667 119059 86000) "gettext-1.0/" "mypaint-data/" "gegl-0.4/" "lensfun/" "qutebrowser/" "hspell/" "enchant-2/" "empty.sshd/" "spotify-launcher/" "libayatana-indicator/" "fzf/" "xdg-desktop-portal/" "wayland-sessions/" "hypr/" "wayland-protocols/" "zoneinfo-posix/" "ghostscript/" "poppler/" "tlpkg/" "mpv/" "lshw/" "calf/" "ImageMagick-7/" "meson/" "boostbook/" "boost_predef/" "b2/" "qtractor/" "itstool/" "wireplumber/" "spa-0.2/" "lv2specgen/" "libmysofa/" "alsa-card-profile/" "games/" "qt6/" "MYGUI/" "wine/" "feh/" "templates/" "libreoffice/" "idl/" "libnumbertext/" "libexttextcat/" "liblangtag/" "redland/" "dwarves/" "texmf-dist/" "torbrowser-launcher/" "qt/" "vulkan/" "argyllcms/" "util-macros/" "nvim/" "tree-sitter/" "luajit-2.1/" "lua/" "xsessions/" "fastfetch/" "gitweb/" "gitk/" "git-gui/" "git-core/" "git/" "openal/" "vim/" "desktop-directories/" "libinput/" "libwacom/" "sounds/" "pipewire/" "imlib2/" "help/" "installed-tests/" "appstream/" "gtk-4.0/" "gst-plugins-base/" "gstreamer-1.0/" "cmake/" "tor/" "metainfo/" "gnome-shell/" "themes/" "gtk-3.0/" "xkeyboard-config-2/" "avahi/" "iso-codes/" "ffmpeg/" "zmq/" "model/" "ladspa/" "libthai/" "glycin-loaders/" "WebP/" "thumbnailers/" "glvnd/" "drirc.d/" "wayland/" "icons/" "libdrm/" "java/" "graphite2/" "fontconfig/" "defaults/" "X11/" "xcb/" "GConf/" "fonts/" "alsa/" "grub/" "mkinitcpio/" "texinfo/" "texi2any/" "guile/" "libtool/" "groff/" "gcc-15.2.1/" "gdb/" "bison/" "automake-1.18/" "aclocal-1.18/" "autoconf/" "perl5/" "tc/" "iproute2/" "xtables/" "iptables/" "pacman/" "makepkg-template/" "makepkg/" "systemd/" "polkit-1/" "mime/" "kbd/" "xml/" "dbus-1/" "gnupg/" "applications/" "vala/" "glib-2.0/" "gir-1.0/" "ca-certificates/" "p11-kit/" "gtk-doc/" "zsh/" "libalpm/" "fish/" "bash-completion/" "pkgconfig/" "hwdata/" "gettext/" "emacs/" "icu/" "awk/" "file/" "libgpg-error/" "common-lisp/" "audit-rules/" "aclocal/" "keyutils/" "ss/" "et/" "readline/" "doc/" "terminfo/" "tabset/" "locale/" "info/" "i18n/" "zoneinfo-leaps/" "zoneinfo/" "pixmaps/" "misc/" "man/" "factory/" "licenses/" "iana-etc/" "../" "./")
+
+ ("/usr/" (27039 13722 219772 891000) "sbin/" "lib64/" "lib32/" "src/" "local/" "lib/" "include/" "bin/" "share/" "../" "./")
+
+ ("/home/landon/Downloads/" (27020 35794 935155 950000) "Input_Fonts/" "README.txt" "ChangeLog.txt" "INSTALL.txt" "LICENSE.txt" "Input-Font.zip" "Scripts/" "arduino-ide_2.3.7_Linux_64bit/" "JetBrainsMono-2.304.zip" "MyPaint-v2.0.1.AppImage" "jumpscare-94984.mp3" "xbox_360.zip" "xbox_360_compat.zip" "abaf11c65a2970b130abe3c479be3e4300411886.asc" "1vyrain.iso" "../" "./")
+
+ ("/home/landon/Desktop/orthodoxy/verses/" (27022 25288 341010 886000) "miscellaneous/" "images/" "doctrines/" "creeds & confessions/" ".git/" "../" "./")
+
+ ("/home/landon/Desktop/orthodoxy/verses/doctrines/" (27022 25613 981976 562000) "Ways to salvation.org" "Trinity.org" "Tongues.org" "Punishment.org" "Perpetual virginity of Mary.org" "Messiah.org" "Mary's sinlessness.org" "King James Version Only.org" "Homosexuality.org" "Evolution.org" "../" "./")
+
+ ("/home/landon/.emacs.local/" (27020 35794 935155 950000) "exwm-firefox-core.el" "exwm-firefox.el" "simpc-mode.el" "porth-mode.el" "nothings-mode.el" "noq-mode.el" "jai-mode.el" "fasm-mode.el" "c3-mode.el" "basm-mode.el" "../" "./")
+
+ ("/home/landon/Documents/st/" (27017 58239 105126 970000) "st" "x.o" "st.o" "config.h" "config.h~" "x.c" "win.h" "st.info" "st.h" "st.c" "st.1" "patches/" "config.mk" "config.def.h" "arg.h" "TODO" "README" "Makefile" "LICENSE" "LEGACY" "FAQ" "../" "./")
+
+ ("/home/landon/Desktop/school/writing/" (27010 13740 173014 515000) "goat-wolf-wheat.org" "base10-to-other-base.tex" "latex.tex" "latex.pdf" "latex.log" "latex.aux" "teleportation-services.tex" "potential-ai-jobs.tex" "random_writing" "conflict" "auto/" "story.odt" "danielstory.odt" "story.txt" "lie.txt" "homework-10-30-25.txt" "dialogue.txt" "venezuela.tex" "gen-ai-art.tex" "future-job.tex" "../" "./")
+
+ ("/home/landon/.config/nvim/after/plugin/" (27010 9550 953500 701000) "theme.lua" "telescope.lua" "neoscroll.lua" "harpoon.lua" "../" "./")
+
+ ("/home/landon/.emacs.d/org/" (27002 36396 269099 415000) "calendar.org" "projects.org" "tasks.org" "../" "./")
+
+ ("/home/landon/.emacs.d/" (27010 13352 746002 198000) "org/" "ido.last" "url/" "smex-items" "ielm-history.eld" "recentf" "eshell/" "auto-save-list/" "history" "transient/" "eln-cache/" "elpa/" "../" "./")
+
+ ("/home/landon/org/" (27002 36396 269099 415000) "calendar.org" "projects.org" "tasks.org" "../" "./")
+
+ ("/home/landon/.config/nvim/after/" (27008 50876 375883 920000) "plugin/" "../" "./")
+
+ ("/home/landon/Desktop/school/documents/" (26992 55748 373750 757000) "Screenshot 2025-12-14 at 14-10-08 Scores - MyACT.png" "../" "./")
+
+ ("/home/landon/Documents/" (26983 45139 324615 157000) "surf/" "surf.zip" "core-term/" "st/" "slstatus/" "dwm/" "music/" "Better-Projectiles/" "School/" "brillo/" "Obsidian Vault/" "emacs-30.2/" "caled/" "yay-bin/" "dotfiles/" "ghostty/" "../" "./")
+
+ ("/home/landon/.config/nvim/lua/plugins/" (27008 51149 234014 392000) "theme.lua" "telescope.lua" "neoscroll.lua" "harpoon.lua" "autopairs.lua" "../" "./")
+
+ ("/home/landon/.config/nvim/lua/" (27008 50876 376212 94000) "plugins/" "config/" "../" "./")
+
+ ("/home/landon/.config/nvim/" (27008 50876 375883 920000) "lua/" "lazy-lock.json" "init.lua" "after/" "../" "./")
+
+ ("/home/landon/.config/" (27008 49793 353771 779000) "nvim/" "pavucontrol.ini" "nyxt/" "cl-electron-server/" "mypaint/" "qutebrowser/" "spotify/" "hypr/" "mpv/" "xdg-desktop-portal/" "cosmic/" "QtProject.conf" "openmw/" "autostart/" "menus/" "obsidian/" "libreoffice/" "Arduino IDE/" "arduino-ide/" "gtk-4.0/" "torbrowser/" "Signal/" "yay/" "ghostty/" "i3/" "nautilus/" ".mozilla/" "pulse/" "goa-1.0/" "gtk-3.0/" ".gsd-keyboard.settings-ported" "evolution/" "dconf/" "ibus/" "user-dirs.locale" "user-dirs.dirs" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

@@ -1,0 +1,90 @@
+var ball = {
+    x: 0,
+    y: 0,
+    vx: 2,
+    vy: 0,
+    r: 12,
+    yInt: 100
+};
+
+var slope, eol;
+var base_x, has_base_x = false;
+var base_x2, has_base_x2 = false;
+
+var direction = 1;
+var invert = false;
+
+draw = function() {
+    // HARDCODED VERSION
+
+    // if (!invert) {
+    //     ball.x += direction;
+    //     ball.y = ball.x + 100;
+
+    //     if (ball.x < 400) {
+    //         if (ball.y < 400) { point(ball.x, ball.x + 100); } // y = x + 100 (line 1)
+    //         else { point(ball.x, -ball.x + 700); } // y = -x + 700 (line 2)
+
+    //     } else { invert = true; }
+    // } else {
+    //     ball.x -= direction;
+    //     ball.y = ball.x - 100;
+
+    //     if (ball.y < 400) {
+    //         if (ball.y >= 0) { point(ball.x, ball.x - 100); } // y = x - 100 (line 3)
+    //         else if (ball.x >= 0) { point(ball.x, -ball.x + 100); } // y = -x + 100 (line 4)
+    //     }
+    // }
+    
+    // y = mx + b
+    // m = (y2-y1)/(x2-x1) or (y - b) / x
+    // y2 or y1 = m(x2 or x1) + b
+    
+    // AUTOMATED VERSION
+    
+    if (!invert) {
+        ball.x += direction;
+        ball.y = ball.x + ball.yInt;
+        
+        slope = (ball.y - ball.yInt) / ball.x;
+        eol = (slope * ball.x) + ball.yInt;
+
+        if (ball.x < 400) {
+            if (ball.y < 400) { point(ball.x, eol); }
+            else {
+                if (!has_base_x) {
+                    base_x = ball.x;
+                    has_base_x = true;
+                }
+                
+                slope = (ball.y - ball.yInt) / ball.x;
+                var x_delta = base_x - (ball.x - base_x);
+                eol = (slope * x_delta) + ball.yInt;
+                point(ball.x, eol);
+                debug(eol);
+            }
+        } else { invert = true; }
+    } else {
+        ball.x -= direction;
+        ball.y = ball.x - ball.yInt;
+
+        slope = (ball.y - ball.yInt) / ball.x;
+        eol = (slope * ball.x) + ball.yInt;
+
+        if (ball.y < 400) {
+            if (ball.y > 0) { point(ball.x, eol); }
+            else if (ball.x >= 0) {
+                if (!has_base_x2) {
+                    base_x2 = ball.x;
+                    has_base_x2 = true;
+                }
+                
+                slope = (-ball.y - ball.yInt) / -ball.x;
+                var x_delta = base_x2 - ball.x;
+                eol = (slope * x_delta);
+                point(ball.x, eol);
+                debug(eol);
+            }
+        }
+    }
+};

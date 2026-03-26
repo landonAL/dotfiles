@@ -35,7 +35,7 @@ workspace_layout tabbed
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+t exec ghostty
+bindsym $mod+t exec st
 
 # kill focused window
 bindsym $mod+q kill
@@ -45,10 +45,20 @@ bindsym $mod+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+s exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+s exec --no-startup-id dmenu_run -fn "Iosevka-11"
 
 # set wallpaper
-exec --no-startup-id feh --bg-fill ~/wallpapers/macos_mojave.jpg
+exec --no-startup-id feh --bg-fill ~/.config/i3/ibm-thinkpad.jpg
+
+# make all gtk-4 apps use dark mode by default
+exec gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+
+# adjust brightness for less eye strain
+exec brillo -q -S 95
+
+# approximately correct color calibration by slightly increasing blue gamma to counteract the natural yellow tint
+#exec xgamma -bgamma 1.2
+exec --no-startup-id redshift-gtk -l `whereami.py`
 
 # remove titlebars
 default_border pixel 2

@@ -1,0 +1,8 @@
+Original sentence: As he fell to the ground aching in pain, he yelled.
+
+Revised:
+As his left foot got caught behind his right foot, the boy toppled forward. He tried to extend his arms in
+order to catch himself, but he fell at a slight leftward angle; as a result, he landed on his left arm with
+his whole body, spraining it, causing the boy to yell in extreme pain. When he stood up, the pain was fully
+realized, for his entire arm felt as if it was burning from scraping it on the concrete and was also
+throbbing.

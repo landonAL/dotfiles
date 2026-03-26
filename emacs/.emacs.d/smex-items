@@ -1,0 +1,49 @@
+
+;; ----- smex-history -----
+(
+ time
+ version
+ help
+ org-mode
+ fundamental-mode
+ exwm-wm-mode
+ global-ewm-mode
+)
+
+;; ----- smex-data -----
+(
+ (execute-extended-command . 2)
+ (time-stamp . 2)
+ (org-timer-set-timer . 1)
+ (time . 91)
+ (eww . 1)
+ (compile . 8)
+ (copy-file . 1)
+ (org-agenda . 3)
+ (org-agenda-todo . 1)
+ (org-agenda-add-note . 1)
+ (org-add-note . 1)
+ (calc . 1)
+ (package-delete . 8)
+ (describe-char . 2)
+ (calendar . 1)
+ (org-indent-mode . 4)
+ (magit . 1)
+ (describe-variable . 4)
+ (customize . 1)
+ (list-load-path-shadows . 1)
+ (mkdir . 1)
+ (org-mode . 4)
+ (org-table-insert-hline . 1)
+ (fundamental-mode . 3)
+ (indent-rigidly . 1)
+ (toggle-word-wrap . 2)
+ (replace-regexp . 11)
+ (make-empty-file . 1)
+ (ses-mode . 1)
+ (scratch-buffer . 1)
+ (global-ewm-mode . 1)
+ (exwm-wm-mode . 1)
+ (help . 1)
+ (version . 1)
+)

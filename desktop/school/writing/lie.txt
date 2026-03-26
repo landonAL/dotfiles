@@ -1,0 +1,38 @@
+A lie to a recipient is a false or purposefully ambiguous statement given by a living being, who is aware
+that their statement is false. However, one can lie to himself by reaffirming a belief to himself that he
+knows is false, whether by a conscious effort or by surrounding himself with other people who believe the
+false idea, thereby subconsciously clouding his logical judgement often with emotion.
+
+Situations:
+Knave, Knight, Knave
+
+Make ABC all knights
+
+A says "C is a knight"
+B says "A and I are the same"
+C says "B and I are the same"
+
+A is knave =
+A = knave
+B = knight
+C = knave
+
+Treasure
+B: Knave
+--------
+No
+
+Treasure
+B: Knight
+--------
+No
+
+Trap
+B: Knave
+--------
+Yes
+
+Trap
+B: Knight
+--------
+Yes

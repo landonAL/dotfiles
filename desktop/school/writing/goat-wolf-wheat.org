@@ -1,0 +1,9 @@
+1. Take the goat
+   If you send the wolf, the goat will eat the wheat
+
+2. Take the wolf
+   If you send the wheat and the goat, the goat will eat the wheat
+   If you send the wolf and the goat, the wolf will eat the goat
+
+3. Take the goat
+   The wolf won't eat the wheat, and the goat isn't there for him to eat.
